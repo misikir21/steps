@@ -6,13 +6,18 @@ const messages = [
 ];
 export default function App() {
   const [steps,setSteps]=useState(1);
+  const [isopen,setisopen]=useState(false)
   const handleprv=function(){
     if(steps > 1) setSteps(steps -1)
   }
   const handlenxt=function(){
   if(steps < 3)  setSteps(steps + 1)
   }
-  return <div className="steps">
+  
+  return(
+    <div>
+  {isopen &&(
+   <div className="steps">
     <div className="numbers">
       <div className={`${steps >= 1?"active":''}`}>1</div>
       <div className={`${steps >= 2?"active":''}`}>2</div>
@@ -29,6 +34,8 @@ export default function App() {
       
     </div>
   </div>
-}
+    )}
+      </div>
+)}
 
 
