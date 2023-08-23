@@ -5,6 +5,12 @@ const messages = [
 ];
 export default function App() {
   const steps=2;
+  const handleprv=function(){
+    alert("Previous")
+  }
+  const handlenxt=function(){
+    alert("Next")
+  }
   return <div className="steps">
     <div className="numbers">
       <div className={`${steps >= 1?"active":''}`}>1</div>
@@ -15,8 +21,10 @@ export default function App() {
       steps{steps}:{messages[steps-1]}
     </p>
     <div className="buttons" >
-      <button style={{backgroundColor:'#7950F2',color:'#FFF'}}>Previous</button>
-      <button style={{backgroundColor:'#7950F2',color:'#FFF'}}>Next</button>
+      <button style={{backgroundColor:'#7950F2',color:'#FFF'}}
+      onClick={handleprv}></button>
+      <button style={{backgroundColor:'#7950F2',color:'#FFF'}}
+      onClick={handlenxt}></button>
       
     </div>
   </div>
