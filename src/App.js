@@ -1,15 +1,16 @@
+import {useState} from "react";
 const messages = [
   "Learn React ⚛️",
   "Apply for jobs 💼",
   "Invest your new income 🤑",
 ];
 export default function App() {
-  const steps=2;
+  const [steps,setSteps]=useState(1);
   const handleprv=function(){
-    alert("Previous")
+    if(steps > 1) setSteps(steps -1)
   }
   const handlenxt=function(){
-    alert("Next")
+  if(steps < 3)  setSteps(steps + 1)
   }
   return <div className="steps">
     <div className="numbers">
@@ -22,9 +23,9 @@ export default function App() {
     </p>
     <div className="buttons" >
       <button style={{backgroundColor:'#7950F2',color:'#FFF'}}
-      onClick={handleprv}></button>
+      onClick={handleprv}>Previous</button>
       <button style={{backgroundColor:'#7950F2',color:'#FFF'}}
-      onClick={handlenxt}></button>
+      onClick={handlenxt}>Next</button>
       
     </div>
   </div>
